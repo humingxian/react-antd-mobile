@@ -16,13 +16,21 @@ const FlexExample = Loadable({
   loading: Loading
 })
 
+// todo
+const App = Loadable({
+  loader: () => import('../page/Todo/App'),
+  loading: Loading
+})
+
+
 
 class MyRouter extends Component {
   render() {
     return (
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/flex" exact component={FlexExample} />
+        <Route path="/flex" component={FlexExample} />
+        <Route path="/todo" component={App} />
       </Switch>
     );
   }
